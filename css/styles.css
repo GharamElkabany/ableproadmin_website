@@ -836,6 +836,14 @@ a {
         gap: 3rem;
     }
 
+    .chat-section {
+        padding: 4rem 0;
+    }
+
+    .chat-section .chat-container .chat-card .chat-options {
+        padding-left: 4rem;
+    }
+
     .chat-section .chat-container .chat-card .chat-options .option {
         width: 450px !important;
     }
