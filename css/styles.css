@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nata+Sans:wght@100..900&family=Playwrite+HU:wght@100..400&family=Poppins:wght@400;500;700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     box-sizing: border-box;
     font-family: "Nata Sans", sans-serif ;
@@ -19,6 +20,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 /*? ************************ Common Styles *************************/
@@ -56,6 +58,7 @@ a {
 /*TODO:************************ Header Section *************************/
 
 .header {
+    width: 100%;
     background-image: url(/assets/img-headerbg.jpg);
     background-repeat: no-repeat;
     background-position: top;
@@ -314,7 +317,7 @@ a {
 }
 
 .tech-section .tech-container {
-    width: 85%;
+    width: 90%;
     max-width: 1250px;
     margin: auto;
 }
@@ -476,13 +479,7 @@ a {
 /*? **************************** Chat Section ****************************/
 .chat-section {
     background-color: var(--navbar-hover-color);
-    padding: 4rem 0 5rem 0;
-}
-
-.chat-section .chat-container {
-    width: 90%;
-    max-width: 1250px;
-    margin: auto;
+    padding: 4rem 0 4rem 4rem;
 }
 
 .chat-section .chat-container .section-title h2{
@@ -495,13 +492,19 @@ a {
 
 .chat-section .chat-container .chat-card {
     display: flex;
-    align-items: flex-start;
-    position: relative;
     width: 100%;
     padding: 30px 0 0 0;
+    gap: 1.5rem;
+}
+
+.chat-section .chat-container .chat-card .chat-image {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .chat-section .chat-container .chat-card .chat-options {
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -512,10 +515,6 @@ a {
     padding: 1rem;
     border-radius: 10px;
     transition: var(--main-transition);
-}
-
-.chat-section .chat-container .chat-card .chat-options .option:first-child {
-    background-color: #e2e8fc3b;
 }
 
 .chat-section .chat-container .chat-card .chat-options .option:hover {
@@ -531,14 +530,10 @@ a {
     color: #c7d3ff;
 }
 
-.chat-section .chat-container .chat-card .chat-image {
-    position: absolute;
-    right: -270px;
-}
-
 .chat-section .chat-container .chat-card .chat-image img {
     width: 100%;
-    max-width: 820px;
+    height: auto;
+    max-width: 500px;
 }
 
 /*? **************************** Version Section ****************************/
@@ -611,7 +606,7 @@ a {
 }
 
 .comments-section .comments-container {
-    width: 90%;
+    width: 93%;
     max-width: 1800px;
     margin: auto;
 }
@@ -623,12 +618,13 @@ a {
 .comments-section .comments-container .comments {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
-    margin-bottom: 1rem;
 }
 
 .comments-section .comments-container .comments .comment {
-    width: 100%;
+    width: 20rem;
     display: flex;
     align-items: start;
     background-color: var(--white);
@@ -649,10 +645,12 @@ a {
 }
 
 .comments-section .comments-container .comments .comment h4 {
+    font-size: 0.9rem;
     font-weight: 400;
 }
 
 .comments-section .comments-container .comments .comment p {
+    font-size: 0.8rem;
     color: var(--navbar-color);
 }
 
@@ -664,31 +662,26 @@ a {
 
 .clients-section .clients-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
+    padding: 0 1.5rem;
 }
 
 .clients-section .clients-container .clients {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.clients-section .clients-container .clients .row {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
-.clients-section .clients-container .clients .row img {
+.clients-section .clients-container .clients img {
     cursor: pointer;
     opacity: 0.4;
     transition: opacity 0.3s ease;
 }
 
-.clients-section .clients-container .clients .row img:hover {
+.clients-section .clients-container .clients img:hover {
     opacity: 1;
 }
 
@@ -803,9 +796,65 @@ a {
     color: var(--navbar-hover-color);
 }
 
-/*TODO:************************ Media Query *************************/
+/*TODO:************************ Media Query (Desktop) *************************/
 
-@media (max-width: 500px) {
+@media (max-width: 1199.98px) {
+    .chat-section .chat-container .chat-card .chat-options .option {
+        width: 400px;
+    }
+
+    .version-section .version-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+/*TODO:************************ Media Query (Tablets) *************************/
+
+@media (max-width: 991.98px) {
+    .chat-section .chat-container .chat-card {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .chat-section .chat-container .chat-card .chat-options {
+        width: 100%;
+    }
+
+    .chat-section .chat-container .chat-card .chat-options .option {
+        width: 650px;
+    }
+}
+
+/*TODO:************************ Media Query (Mobile-Landscape) *************************/
+
+@media (max-width: 767.98px) {
+  .chat-section .chat-container .chat-card {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .chat-section .chat-container .chat-card .chat-options .option {
+        width: 450px !important;
+    }
+
+    .version-section .version-container {
+        padding: 0 1.5rem;
+        gap: 2rem;
+    }
+
+    .comments-section .comments-container {
+        width: 95%;
+    }
+
+    
+}
+
+/*TODO:************************ Media Query (Mobile-portrait) *************************/
+
+@media (max-width: 575.98px) {
     .header .header-content {
         padding-top: 13rem;
     }
@@ -813,6 +862,10 @@ a {
     .header .setting {
         z-index: 10;
     }
+
+    .header .header-content {
+        font-size: 1.4rem;
+    }    
 
     .version-section .version-container {
         padding: 0 1.5rem;
@@ -823,22 +876,12 @@ a {
         flex-wrap: wrap;
     }
 
-    .chat-section .chat-container .chat-card {
-        padding-bottom: 20.5rem;
+    .comments-section .comments-container .comments .comment {
+        width: 100%;
     }
 
     .chat-section .chat-container .chat-card .chat-options .option {
-        width: 350px;
-        padding-right: 0.5rem;
-    }
-
-    .chat-section .chat-container .chat-card .chat-image img {
-        width: 75%;
-    }
-
-    .chat-section .chat-container .chat-card .chat-image {
-        top: 72%;
-        right: -215px;
+        width: 320px !important;
     }
 
     .clients-section .clients-container .clients .row img {
